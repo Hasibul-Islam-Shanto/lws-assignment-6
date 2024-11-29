@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,8 +9,10 @@ export default function RecipesCard({ recipe, categoryDetails }) {
         href={`/${categoryDetails.id}/${recipe.id}`}
         className="bg-white rounded-lg overflow-hidden shadow-md"
       >
-        <img
+        <Image
           src={`/thumbs/${recipe.thumbnail}`}
+          height={500}
+          width={500}
           alt={recipe.title}
           className="w-full h-48 object-cover"
         />

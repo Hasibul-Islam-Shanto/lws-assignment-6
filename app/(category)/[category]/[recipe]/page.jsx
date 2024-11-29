@@ -1,5 +1,6 @@
 import { combinationOfCategoriesAndRecipes } from "@/data/combineData";
 import { formattedDate } from "@/utils/helper";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Recipe({ params }) {
@@ -23,8 +24,10 @@ export default function Recipe({ params }) {
             {recipeDetails?.title}
           </h1>
           <div className="flex items-center space-x-4 mb-6">
-            <img
+            <Image
               src="/avater.png"
+              height={30}
+              width={30}
               alt="Author"
               className="w-8 h-8 rounded-full"
             />
@@ -62,8 +65,10 @@ export default function Recipe({ params }) {
               </button>
             </div>
           </div>
-          <img
+          <Image
             src={`/thumbs/${recipeDetails?.thumbnail}`}
+            height={500}
+            width={500}
             alt="Cooking Image"
             className="w-full h-auto mb-8 rounded-lg"
           />
@@ -79,20 +84,20 @@ export default function Recipe({ params }) {
 
           <h2 className="text-3xl font-bold mb-4">Here are the basics</h2>
           <p className="mb-8">
-            Juicy meatballs brisket slammin' baked shoulder. Juicy smoker soy
-            sauce burgers brisket. polenta mustard hunk greens. Wine technique
-            snack skewers chuck excess. Oil heat slowly. slices natural
-            delicious, set aside magic tbsp skillet, bay leaves brown
+            Juicy meatballs brisket slammin&apos; baked shoulder. Juicy smoker
+            soy sauce burgers brisket. polenta mustard hunk greens. Wine
+            technique snack skewers chuck excess. Oil heat slowly. slices
+            natural delicious, set aside magic tbsp skillet, bay leaves brown
             centerpiece. fruit soften edges frond slices onion snack pork steem
             on wines excess technique cup; Cover smoker soy sauce.
           </p>
 
           <blockquote className="text-3xl font-bold italic text-center my-12 px-4">
-            "One cannot think well, love well, sleep well, if one has not dined
-            well."
+            &quot;One cannot think well, love well, sleep well, if one has not
+            dined well.&quot;
           </blockquote>
           <p className="text-center text-gray-600 mb-12">
-            — Virginia Woolf, A Room of One's Own
+            — Virginia Woolf, A Room of One&apos;s Own
           </p>
 
           <h2 className="text-3xl font-bold mb-4">In the kitchen</h2>
@@ -104,17 +109,19 @@ export default function Recipe({ params }) {
             Skewers on culinary experience.
           </p>
 
-          <img
+          <Image
             src={`/thumbs/${recipeDetails?.thumbnail}`}
+            height={500}
+            width={500}
             alt="Cooking in kitchen"
             className="w-full h-auto mb-8 rounded-lg max-w-xl mx-auto"
           />
 
           <p className="mb-8">
-            Juicy meatballs brisket slammin' baked shoulder. Juicy smoker soy
-            sauce burgers brisket. polenta mustard hunk greens. Wine technique
-            snack skewers chuck excess. Oil heat slowly. slices natural
-            delicious, set aside magic tbsp skillet, bay leaves brown
+            Juicy meatballs brisket slammin&apos; baked shoulder. Juicy smoker
+            soy sauce burgers brisket. polenta mustard hunk greens. Wine
+            technique snack skewers chuck excess. Oil heat slowly. slices
+            natural delicious, set aside magic tbsp skillet, bay leaves brown
             centerpiece. fruit soften edges frond slices onion snack pork steem
             on wines excess technique cup; Cover smoker soy sauce.
           </p>
@@ -126,8 +133,10 @@ export default function Recipe({ params }) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {existRecommendations.map((item) => (
                 <Link href={`/${category}/${item.id}`} key={item.id}>
-                  <img
+                  <Image
                     src={`/thumbs/${item.thumbnail}`}
+                    height={500}
+                    width={500}
                     alt={item.title}
                     className="w-full h-60 object-cover rounded-lg mb-2"
                   />
